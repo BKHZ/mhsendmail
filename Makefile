@@ -11,4 +11,10 @@ release: release-deps
 release-deps:
 	go get github.com/mitchellh/gox
 
+build_linux_arm64:
+	GOOS=linux GOARCH=arm64 go build \
+		-mod=readonly \
+		-o dist/mhsendmail-linux-arm64 \
+		.
+
 .PNONY: all release release-deps
